@@ -5,8 +5,9 @@ Welcome to the ALX Higher Level Programming repository! This repository is dedic
 
 
 Languages
+=========
 
 The main programming languages covered in this repository include, but are not limited to:
 
-Python
-C
+- Python
+- C
