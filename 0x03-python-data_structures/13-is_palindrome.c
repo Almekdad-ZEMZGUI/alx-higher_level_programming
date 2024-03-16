@@ -12,8 +12,8 @@ int is_palindrome(listint_t **head)
         unsigned int length = 0, i;
         int arr[10240];
         
-        if (!*head || !head)
-                return (0);
+        if (!*head)
+                return (1);
         
         for (i = 0; temp; i++)
         {
