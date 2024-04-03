@@ -3,9 +3,8 @@
 
 
 class Square:
-    """ Empty class defines a square """
+    """ class """
     def __init__(self, size=0, position=(0, 0)):
-        """Initializes a Square instance with a given size."""
         self.size = size
         self.position = position
 
@@ -36,7 +35,8 @@ class Square:
                 type(value[0]) is not int or type(value[1]) is not int or \
                 value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        else:
+            self.__position = value
 
     def area(self):
         """ returns the current square area """
@@ -51,4 +51,3 @@ class Square:
             print()
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
-            print()
