@@ -12,7 +12,7 @@ class Square:
     @property
     def size(self):
         """Getter method to retrieve the size of the square."""
-        return self.
+        return self.__size
 
     @property
     def position(self):
