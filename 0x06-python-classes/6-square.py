@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" First task """
+""" class """
 
 
 class Square:
@@ -47,7 +47,7 @@ class Square:
         if self.__size == 0:
             print()
             return
-        print("\n" * self.position[1], end="")
-        print("\n".join([" " * self.position[0] +
-                         "#" * self.size
-                         for _ in range(self.size)]))
+        for _ in range(self.__position[1]):
+            print()
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
