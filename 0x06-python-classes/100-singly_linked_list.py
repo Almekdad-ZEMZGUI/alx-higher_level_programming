@@ -1,64 +1,72 @@
+#!/usr/bin/python3
+"""Node"""
+
+
 class Node:
-    """Defines a node of a singly linked list."""
-    
+    """Class Node"""
+
     def __init__(self, data, next_node=None):
-        """Initializes a Node instance with data and next_node."""
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
-        """Getter method to retrieve the data of the node."""
+        """Data getter"""
         return self.__data
 
     @data.setter
     def data(self, value):
-        """Setter method to set the data of the node."""
-        if not isinstance(value, int):
+        """Data setter"""
+        if type(value) is not int:
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
-        """Getter method to retrieve the next_node of the node."""
+        """next_node getter"""
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        """Setter method to set the next_node of the node."""
-        if value is not None and not isinstance(value, Node):
-            raise TypeError("next_node must be a Node object or None")
+        if type(value) is not Node and value is not None:
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
 class SinglyLinkedList:
-    """Defines a singly linked list."""
+    """Class of SinglyLinkedList"""
 
     def __init__(self):
-        """Initializes a SinglyLinkedList instance."""
-        self.head = None
-
-    def sorted_insert(self, value):
-        """Inserts a new Node into the correct sorted position in the list."""
-        new_node = Node(value)
-        if self.head is None or self.head.data >= value:
-            new_node.next_node = self.head
-            self.head = new_node
-            return
-
-        current = self.head
-        while current.next_node is not None and current.next_node.data < value:
-            current = current.next_node
-
-        new_node.next_node = current.next_node
-        current.next_node = new_node
+        self.__head = None
 
     def __str__(self):
-        """Prints the entire list."""
-        result = ""
-        current = self.head
-        while current is not None:
-            result += str(current.data) + "\n"
-            current = current.next_node
-        return result.strip()
+        string = ""
+        temp = self.__head
 
+        while temp is not None:
+            string += str(temp.data)
+            temp = temp.next_node
+            if temp is not None:
+                string += "\n"
+        return string
+
+    def sorted_insert(self, value):
+        """Insert values"""
+
+        new = Node(value)
+        if self.__head is None:
+            self.__head = new
+            return
+
+        temp = self.__head
+
+        if new.data < temp.data:
+            new.next_node = self.__head
+            self.__head = new
+            return
+
+        while temp.next_node is not None and new.data > temp.next_node.data:
+            temp = temp.next_node
+        new.next_node = temp.next_node
+        temp.next_node = new
+        return
