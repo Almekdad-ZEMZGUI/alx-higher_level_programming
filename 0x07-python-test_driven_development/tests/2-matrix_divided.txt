@@ -8,21 +8,72 @@ First import the module:
 
 	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
+Normal test cases:
+
+    >>> matrix = [[0, 0, 0], [0, 0, 0]]
+    >>> matrix_divided(matrix, 2)
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+	>>> matrix = [[1, 2, 3], [3, 4, 5]]
+	>>> matrix_divided(matrix, -0.6)
+	[[-1.67, -3.33, -5.0], [-5.0, -6.67, -8.33]]
+
+	>>> matrix = [[-1, -2, 3]]
+	>>> matrix_divided(matrix, -0.6)
+	[[1.67, 3.33, -5.0]]
+
+	>>> matrix = [[1, 2, 0], [3, 4, 5], [5, 5, 5]]
+	>>> matrix_divided(matrix, float("inf"))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+	>>> matrix = [[True], [False], [True]]
+	>>> matrix_divided(matrix, 5)
+	[[0.2], [0.0], [0.2]]
+
+	>>> matrix = [[1.65, 2.55, 0.88], [3.74839, 4.33, 5], [57.34, 5.09, 5.00]]
+	>>> matrix_divided(matrix, -57)
+	[[-0.03, -0.04, -0.02], [-0.07, -0.08, -0.09], [-1.01, -0.09, -0.09]]
+
 Test with invalid input type:
 
 	>>> matrix_divided("matrix", 2)
 	Traceback (most recent call last):
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([7, 5, -1], 2)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 	>>> matrix_divided([[1, 2, 3],[4, 5]], 2)
 	Traceback (most recent call last):
 	...
 	TypeError: Each row of the matrix must have the same size
+
 	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], "2")
 	Traceback (most recent call last):
 	...
 	TypeError: div must be a number
+
 	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 0)
 	Traceback (most recent call last):
 	...
 	ZeroDivisionError: division by zero
+
+Test empty matrix:
+
+    >>> matrix_divided([], 5)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[], [], []], 5)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided(None, 5)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
