@@ -10,9 +10,9 @@ First import the module:
 
 Normal test cases:
 
-   	>>> matrix = [[0, 0, 0], [0, 0, 0]]
-	>>> matrix_divided(matrix, 2)
-	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+    	>>> matrix = [[0, 0, 0], [0, 0, 0]]
+    	>>> matrix_divided(matrix, 2)
+    	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 	>>> matrix = [[1, 2, 3], [3, 4, 5]]
 	>>> matrix_divided(matrix, -0.6)
@@ -46,6 +46,11 @@ Test with invalid input type:
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+	>>> matrix_divided({'a': 2, 'b': 55}, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 	>>> matrix_divided([[1, 2, 3],[4, 5]], 2)
 	Traceback (most recent call last):
 	...
@@ -56,6 +61,8 @@ Test with invalid input type:
 	...
 	TypeError: div must be a number
 
+Test division by 0:
+
 	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 0)
 	Traceback (most recent call last):
 	...
@@ -63,7 +70,7 @@ Test with invalid input type:
 
 Test empty matrix:
 
-   	>>> matrix_divided([], 5)
+    	>>> matrix_divided([], 5)
 	Traceback (most recent call last):
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
@@ -77,3 +84,16 @@ Test empty matrix:
 	Traceback (most recent call last):
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test invalid arguments:
+
+    	>>> print(matrix_divided([[1, 2], [44, 55.67]], 2, 100))
+    	Traceback (most recent call last):
+    	...
+    	TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+    	>>> print(matrix_divided([[1, 2, 3], [3, 4, 22]]))
+    	Traceback (most recent call last):
+    	...
+    	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
