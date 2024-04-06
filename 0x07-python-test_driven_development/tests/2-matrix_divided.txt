@@ -10,8 +10,8 @@ First import the module:
 
 Normal test cases:
 
-    >>> matrix = [[0, 0, 0], [0, 0, 0]]
-    >>> matrix_divided(matrix, 2)
+   	>>> matrix = [[0, 0, 0], [0, 0, 0]]
+	>>> matrix_divided(matrix, 2)
 	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 	>>> matrix = [[1, 2, 3], [3, 4, 5]]
@@ -63,12 +63,12 @@ Test with invalid input type:
 
 Test empty matrix:
 
-    >>> matrix_divided([], 5)
+   	>>> matrix_divided([], 5)
 	Traceback (most recent call last):
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-    >>> matrix_divided([[], [], []], 5)
+    	>>> matrix_divided([[], [], []], 5)
 	Traceback (most recent call last):
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
