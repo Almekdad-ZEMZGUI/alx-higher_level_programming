@@ -1,8 +1,16 @@
 #!/usr/bin/python3
+"""
+101-nqueens module
+solves the N queens problem.
+"""
 import sys
 
 
 def is_safe(board, row, col, N):
+    """
+    Check if placing a queen at the specified
+    position (row, col) on the board is safe.
+    """
     for i in range(row):
         if board[i][col] == 1:
             return False
@@ -19,6 +27,9 @@ def is_safe(board, row, col, N):
 
 
 def solve_n_queens(board, row, N, result):
+    """
+    Recursively solve the N queens problem using backtracking.
+    """
     if row == N:
         queens = []
         for i in range(N):
@@ -35,12 +46,15 @@ def solve_n_queens(board, row, N, result):
             board[row][col] = 0
 
 
-def print_solutions(N):
+def solution(N):
+    """
+    Print all possible solutions to the N queens problem for the given board size N.
+    """
     board = [[0] * N for _ in range(N)]
     result = []
     solve_n_queens(board, 0, N, result)
-    for solution in result:
-        print(solution)
+    for sol in result:
+        print(sol)
 
 
 if __name__ == "__main__":
@@ -58,4 +72,4 @@ if __name__ == "__main__":
         print("N must be at least 4")
         sys.exit(1)
 
-    print_solutions(N)
+    solution(N)
