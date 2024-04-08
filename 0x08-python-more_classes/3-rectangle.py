@@ -70,7 +70,7 @@ class Rectangle:
 
     def area(self):
         """
-        Calculates the rectangle area 
+        Calculates the rectangle area
         """
         return self.__height * self.__width
 
@@ -89,7 +89,5 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        result = ""
-        for _ in range(self.__height):
-            result += "#" * self.__width + "\n"
+        result = "\n".join(["#" * self.__width for _ in range(self.__height)])
         return result
