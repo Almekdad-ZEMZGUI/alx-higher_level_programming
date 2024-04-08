@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-4-rectangle module
+5-rectangle module
 With a class represents a rectangle
 """
 
