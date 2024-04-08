@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+"""
+0-rectangle module
+With an empty class named Rectangle
+"""
+
+
 class Rectangle:
-    """ empty class """
-    def __init__(self):
-        pass
-    def my_rectangle(self):
-        """{}"""
-        pass
+    """
+    Empty class
+    """
+    pass
