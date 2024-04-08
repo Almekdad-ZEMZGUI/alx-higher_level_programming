@@ -29,8 +29,8 @@ class Rectangle:
         """
         Initializes new Rectangle instance with specified width and height
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
