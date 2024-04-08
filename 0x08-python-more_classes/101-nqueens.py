@@ -48,7 +48,8 @@ def solve_n_queens(board, row, N, result):
 
 def solution(N):
     """
-    Print all possible solutions to the N queens problem for the given board size N.
+    Print all possible solutions to the N queens
+    problem for the given board size N.
     """
     board = [[0] * N for _ in range(N)]
     result = []
