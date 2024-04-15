@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 2-is_same_class module
+
 with a function is_same_class
 that checks if the object is exactly
 an instance of the specified class
