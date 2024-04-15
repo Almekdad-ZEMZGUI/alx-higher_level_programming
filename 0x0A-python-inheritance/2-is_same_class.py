@@ -3,6 +3,8 @@
 2-is_same_class module
 with a function is_same_class
 """
+
+
 def is_same_class(obj, a_class):
     """
     returns True if the object is exactly an instance
