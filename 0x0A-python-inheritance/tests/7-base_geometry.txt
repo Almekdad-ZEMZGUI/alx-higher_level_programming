@@ -1,0 +1,50 @@
+The ``7-base_geometry`` module
+============================
+
+Using ``BaseGeometry``
+---------------------
+
+First import the module:
+
+	>>> BaseGeometry = __import__('0-add_integer').BaseGeometry
+
+Normal test cases:
+	
+Test this should not raise any error:
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+
+Raises errors tests:
+	
+	>>> bg = BaseGeometry()
+     	>>> bg.area()
+     	Traceback (most recent call last):
+     	...
+     	Exception: area() is not implemented
+
+	>>> bg = BaseGeometry()
+  	>>> bg.integer_validator("checkme", 0)
+     	Traceback (most recent call last):
+     	...
+     	ValueError: checkme must be greater than 0
+
+     	>>> bg = BaseGeometry()
+     	>>> bg.integer_validator("checkme", -23)
+     	Traceback (most recent call last):
+     	...
+     	ValueError: checkme must be greater than 0
+
+Test invalid inputs:
+	
+	>>> bg = BaseGeometry()
+     	>>> bg.integer_validator("name", "There")
+     	Traceback (most recent call last):
+     	...
+     	TypeError: name must be an integer
+
+     	>>> bg = BaseGeometry()
+     	>>> bg.integer_validator("name", [1, 2, 3])
+     	Traceback (most recent call last):
+     	...
+     	TypeError: name must be an integer
