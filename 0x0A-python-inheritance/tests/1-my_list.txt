@@ -6,7 +6,7 @@ Using ``MyList``
 
 First import the module:
 
-	>>> MyList = __import__('1-my_list.py').MyList
+	>>> MyList = __import__('1-my_list').MyList
 
 Normal test cases:
 
@@ -35,3 +35,36 @@ Normal test cases:
 	[-5, -4, -3, -2, -1]
 	>>> print(my_list)
 	[-1, -4, -2, -3, -5]
+	
+	>>> empty = MyList()
+     	>>> print(empty)
+     	[]
+     	>>> empty.print_sorted()
+     	[]
+	
+	>>> my_list = MyList()
+     	>>> my_list.append(300)
+     	>>> print(my_list)
+     	[300]
+     	>>> my_list.print_sorted()
+     	[300]
+     	>>> print(my_list)
+     	[300]
+
+test TYPES:
+
+	>>> type(MyList())
+     	<class '1-my_list.MyList'>
+
+     	>>> isinstance(MyList, object)
+     	True
+
+     	>>> isinstance(MyList, list)
+     	False
+
+     	>>> issubclass(MyList, list)
+     	True
+
+     >>> 'print_sorted' in dir(MyList)
+     True
+
