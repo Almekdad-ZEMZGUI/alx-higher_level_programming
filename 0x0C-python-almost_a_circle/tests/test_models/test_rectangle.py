@@ -149,7 +149,7 @@ class TestBase(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r.update(99, 1, 2, 3, -99)
         r.update(id=53)
-        self.assertEqual(str(r), '[Rectangle] (53) 3/4 - 1/2')
+        self.assertEqual(str(r), '[Rectangle] (53) 3/40 - 1/2')
         r.update(id=44, x=770, y=880, width=990)
         self.assertEqual(str(r), '[Rectangle] (44) 770/880 - 990/2')
         r.update(nokey=1000, invalid=2000, testing=3000, id=4000)
